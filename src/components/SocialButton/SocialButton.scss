@@ -1,0 +1,21 @@
+$color: var(--text-color);
+$background-color: var(--bg-color1);
+
+.SocialButton {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  background-color: $background-color;
+  transition: background-color 1s linear;
+  padding: 5px 10px;
+  width: 100px;
+  border-radius: 30px;
+  a {
+    color: $color;
+    transition: color 1s linear;
+  }
+  svg {
+    fill: var(--text-color);
+    transition: fill 1s linear;
+  }
+}

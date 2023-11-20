@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import SocialButton from './components/SocialButton/SocialButton';
+import DayNight from './components/DayNight/DayNight';
+import './css/app.scss';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './components/LanguageSwitcher/LanguageSwitcher';
 
 function App() {
+  const { t } = useTranslation();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className='App'>
+      <header>
+        <div>
+          {t("logo")}
+        </div>
+        <div>
+          <LanguageSwitcher/>
+          <DayNight/>
+        </div>
       </header>
+      <main className="info">
+        <img className="image" src={require('./assets/photo.jpg')} alt="Ava"/>
+        <h1>{t("title")}</h1>
+        <div>{t("about")}</div>
+        <div>{t("univer")}</div>
+        <div>{t("specialty")}</div>
+        <div>{t("git_1")} <a className="info" href="https://github.com/tensionN">github</a> {t("git_2")}</div>
+      </main>
+
+        <footer>
+          <SocialButton
+            iconsvg="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394a.759.759 0 01-.6.295h-.005l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121L8.32 13.617l-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"
+            text="Telegram"
+            link="https://t.me/bekeep"
+          />
+
+          <SocialButton
+            iconsvg="M17.34 5.46a1.2 1.2 0 101.2 1.2 1.2 1.2 0 00-1.2-1.2zm4.6 2.42a7.59 7.59 0 00-.46-2.43 4.94 4.94 0 00-1.16-1.77 4.7 4.7 0 00-1.77-1.15 7.3 7.3 0 00-2.43-.47C15.06 2 14.72 2 12 2s-3.06 0-4.12.06a7.3 7.3 0 00-2.43.47 4.78 4.78 0 00-1.77 1.15 4.7 4.7 0 00-1.15 1.77 7.3 7.3 0 00-.47 2.43C2 8.94 2 9.28 2 12s0 3.06.06 4.12a7.3 7.3 0 00.47 2.43 4.7 4.7 0 001.15 1.77 4.78 4.78 0 001.77 1.15 7.3 7.3 0 002.43.47C8.94 22 9.28 22 12 22s3.06 0 4.12-.06a7.3 7.3 0 002.43-.47 4.7 4.7 0 001.77-1.15 4.85 4.85 0 001.16-1.77 7.59 7.59 0 00.46-2.43c0-1.06.06-1.4.06-4.12s0-3.06-.06-4.12zM20.14 16a5.61 5.61 0 01-.34 1.86 3.06 3.06 0 01-.75 1.15 3.19 3.19 0 01-1.15.75 5.61 5.61 0 01-1.86.34c-1 .05-1.37.06-4 .06s-3 0-4-.06a5.73 5.73 0 01-1.94-.3 3.27 3.27 0 01-1.1-.75 3 3 0 01-.74-1.15 5.54 5.54 0 01-.4-1.9c0-1-.06-1.37-.06-4s0-3 .06-4a5.54 5.54 0 01.35-1.9A3 3 0 015 5a3.14 3.14 0 011.1-.8A5.73 5.73 0 018 3.86c1 0 1.37-.06 4-.06s3 0 4 .06a5.61 5.61 0 011.86.34 3.06 3.06 0 011.19.8 3.06 3.06 0 01.75 1.1 5.61 5.61 0 01.34 1.9c.05 1 .06 1.37.06 4s-.01 3-.06 4zM12 6.87A5.13 5.13 0 1017.14 12 5.12 5.12 0 0012 6.87zm0 8.46A3.33 3.33 0 1115.33 12 3.33 3.33 0 0112 15.33z"
+            text="Instagram"
+            link="https://instagram.com/sashasolomiychuk"
+          />
+
+          <SocialButton
+            iconsvg="M12 2.247a10 10 0 00-3.162 19.487c.5.088.687-.212.687-.475 0-.237-.012-1.025-.012-1.862-2.513.462-3.163-.613-3.363-1.175a3.636 3.636 0 00-1.025-1.413c-.35-.187-.85-.65-.013-.662a2.001 2.001 0 011.538 1.025 2.137 2.137 0 002.912.825 2.104 2.104 0 01.638-1.338c-2.225-.25-4.55-1.112-4.55-4.937a3.892 3.892 0 011.025-2.688 3.594 3.594 0 01.1-2.65s.837-.262 2.75 1.025a9.427 9.427 0 015 0c1.912-1.3 2.75-1.025 2.75-1.025a3.593 3.593 0 01.1 2.65 3.869 3.869 0 011.025 2.688c0 3.837-2.338 4.687-4.563 4.937a2.368 2.368 0 01.675 1.85c0 1.338-.012 2.413-.012 2.75 0 .263.187.575.687.475A10.005 10.005 0 0012 2.247z"
+            text="Github"
+            link="https://github.com/tensionN"
+          />
+        </footer>
     </div>
   );
-}
+}  
 
 export default App;

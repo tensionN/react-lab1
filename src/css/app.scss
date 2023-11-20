@@ -1,0 +1,71 @@
+@import "https://fonts.googleapis.com/css2?family=Mooli&display=swap";
+:root[data-theme="light"] {
+  --bg-color: #F6F6F6;
+  --bg-color1: #fff;
+  --text-color: #171723;
+}
+:root[data-theme="dark"] {
+  --bg-color: #171723;
+  --bg-color1: #212131;
+  --text-color: #fff;
+}
+
+$color: var(--text-color);
+$font-family: 'Mooli', sans-serif;
+$background-color: var(--bg-color);
+
+.App {
+  width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 98vh;
+}
+
+body {
+  background-color: $background-color;
+  transition: background-color 1s linear;
+  font-family: $font-family;
+}
+header {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  div {
+    &:last-child {
+      display: flex;
+      gap: 10px;
+    }
+    &:first-child {
+      color: $color;
+      transition: color 1s linear;
+    }
+  }
+}
+
+main {
+  flex: 1;
+}
+
+main, footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer {
+  min-height: 50px;
+  gap: 13px;
+}
+a {
+  text-decoration: none;
+}
+.info {
+  flex-direction: column;
+  color: $color;
+  transition: color 1s linear;
+}
+
+.image {
+  height: 300px;
+  border-radius: 50%;
+}
